@@ -37,6 +37,7 @@ claude plugins install security-guidance@claude-plugins-official
 claude plugins install context7@claude-plugins-official
 claude plugins install hookify@claude-plugins-official
 claude plugins install andrej-karpathy-skills@karpathy-skills
+claude plugins install claude-hud@claude-plugins-official
 ```
 
 - **superpowers**: brainstorming, debugging, TDD, plan execution — foundational workflow skills.
@@ -48,6 +49,55 @@ claude plugins install andrej-karpathy-skills@karpathy-skills
 - **context7**: real-time library and docs context.
 - **hookify**: generate hooks from natural language.
 - **andrej-karpathy-skills**: coding discipline — think before coding, simplicity first, surgical changes, goal-driven execution.
+- **claude-hud**: statusline showing model, context, git, tools, usage. Run `/claude-hud:setup` after install, then `/claude-hud:configure` for display options.
+
+#### Recommended HUD config
+
+After `/claude-hud:setup`, write this to `~/.claude/plugins/claude-hud/config.json` for a compact statusline that fits small terminals:
+
+```json
+{
+  "lineLayout": "compact",
+  "showSeparators": false,
+  "language": "en",
+  "display": {
+    "showModel": true,
+    "showContextBar": true,
+    "showTools": true,
+    "showSkills": true,
+    "showMcp": true,
+    "showAgents": true,
+    "showTodos": true,
+    "showProject": true,
+    "showAddedDirs": true,
+    "showConfigCounts": true,
+    "showTokenBreakdown": false,
+    "showSpeed": false,
+    "showCost": false,
+    "showUsage": true,
+    "usageBarEnabled": true,
+    "showResetLabel": true,
+    "showSessionName": true,
+    "showDuration": true,
+    "showSessionTokens": true,
+    "showEffortLevel": true,
+    "showOutputStyle": true,
+    "showMemoryUsage": true,
+    "showPromptCache": false,
+    "showClaudeCodeVersion": true,
+    "showCompactions": true,
+    "showAdvisor": true
+  },
+  "gitStatus": {
+    "enabled": true,
+    "showDirty": true,
+    "showAheadBehind": false,
+    "showFileStats": false
+  }
+}
+```
+
+Turned off from Full: token breakdown, output speed (clutter), prompt cache TTL (noisy), session cost. Usage as a visual bar. To tweak further, run `/claude-hud:configure`.
 
 ### Desktop — GUI environment
 
