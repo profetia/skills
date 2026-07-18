@@ -21,6 +21,7 @@ Before installing, add these marketplaces:
 ```
 /plugin marketplace add anthropics/skills
 /plugin marketplace add forrestchang/andrej-karpathy-skills
+/plugin marketplace add jarrodwatts/claude-hud
 ```
 
 ## Plugins
@@ -37,7 +38,7 @@ claude plugins install security-guidance@claude-plugins-official
 claude plugins install context7@claude-plugins-official
 claude plugins install hookify@claude-plugins-official
 claude plugins install andrej-karpathy-skills@karpathy-skills
-claude plugins install claude-hud@claude-plugins-official
+claude plugins install claude-hud@claude-hud
 ```
 
 - **superpowers**: brainstorming, debugging, TDD, plan execution — foundational workflow skills.
